@@ -3,7 +3,7 @@ const { User } = require('../../../models')
 module.exports = async (req, res) => {
   const id = req.params.id
 
-  const user = await User.findAll({
+  const user = await User.findByPk(id, {
     attributes: ['id', 'name', 'email', 'role', 'profession', 'avatar'],
   })
 
